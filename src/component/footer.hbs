@@ -1,0 +1,26 @@
+{{#with footer}}
+<footer>
+
+    <hr>
+    <br>
+    <div>
+        {{>social}}
+
+    </div>
+    <br>
+    <div>
+        <em>Copyright by {{ ../header/name/firstname }} {{ ../header/name/lastname }} </em>
+    </div>
+    <br>
+    <div><em>{{../header/adress}}</em></div>
+    <br>
+    <hr>
+    <div>
+        <p> Firstame: {{../header.name.firstname}}</p>
+        <p> Lastame: {{../header.name.lastname}}</p>
+        <p> Adress: {{../header.adress}}</p>
+        <p>Social: {{>social}}</p>
+
+    </div>
+</footer>
+{{/with}}

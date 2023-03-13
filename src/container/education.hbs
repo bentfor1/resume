@@ -1,0 +1,34 @@
+<div>
+    <p> Education page in progress...</p>
+</div>
+<div>
+
+    {{#with main}}
+    <main>
+        <section>
+
+            {{>title data="Universities" big=true}}
+            <ul>
+                {{#each universities}}
+                <li>{{name}}
+                    {{#unless isEnd includeZero=true}} (ще в процесі) {{/unless}}
+                </li>
+                {{/each}}
+            </ul>
+        </section>
+        <section>
+
+            {{>title data="My certificates" big=false}}
+
+            <ul>
+                {{#each certificates}}
+                <li>{{ name}}, ({{id }}),
+                </li>
+                {{/each}}
+            </ul>
+        </section>
+    </main>
+    {{/with}}
+
+
+</div>
