@@ -1,0 +1,43 @@
+<div>
+    <p>
+
+        Persom page </p>
+</div>
+<div>
+    <div class="person">
+        <h2>{{person.name}} </h2>
+        <p>Age: {{person.age}}</p>
+        <p>Gender: {{person.gender}}</p>
+        <p>Address: {{person.address.street}}, {{person.address.city}}, {{person.address.state}} {{person.address.zip}},
+            {{person.address.country}}</p>
+        <hr>
+        <br>
+        <h3>Education</h3>
+        <ul>
+            {{#each person.education}}
+            <li>{{this.degree}} in {{this.major}} from {{this.university}} ({{this.graduationYear}})</li>
+            {{/each}}
+        </ul>
+        <hr>
+        <br>
+        <h3>Work Experience</h3>
+        <ul>
+            {{#each person.workExperience}}
+            <li>
+                <h4>{{this.company}}</h4>
+                <p>{{this.title}} ({{this.startDate}} - {{this.endDate}})</p>
+                <ul>
+                    {{#each this.responsibilities}}
+                    <li>{{this}}</li>
+                    {{/each}}
+                </ul>
+            </li>
+            {{/each}}
+        </ul>
+        <hr>
+        <br>
+    </div>
+
+
+
+</div>
