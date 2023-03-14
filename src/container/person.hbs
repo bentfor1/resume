@@ -5,17 +5,21 @@
 </div>
 <div>
     <div class="person">
-        <h2>{{person.name}}</h2>
+        <h2>{{person.name}} </h2>
         <p>Age: {{person.age}}</p>
         <p>Gender: {{person.gender}}</p>
         <p>Address: {{person.address.street}}, {{person.address.city}}, {{person.address.state}} {{person.address.zip}},
             {{person.address.country}}</p>
+        <hr>
+        <br>
         <h3>Education</h3>
         <ul>
             {{#each person.education}}
             <li>{{this.degree}} in {{this.major}} from {{this.university}} ({{this.graduationYear}})</li>
             {{/each}}
         </ul>
+        <hr>
+        <br>
         <h3>Work Experience</h3>
         <ul>
             {{#each person.workExperience}}
@@ -30,6 +34,8 @@
             </li>
             {{/each}}
         </ul>
+        <hr>
+        <br>
     </div>
 
 
