@@ -1,0 +1,54 @@
+<div>
+    <p>
+
+        Facebook page
+    </p>
+</div>
+<div>
+    <button type="button" class="btn btn-info">
+        <h1>Facebook</h1>
+        <h2>users:</h2>
+        <button type="button" class="btn btn-primary">
+            <ul>{{#each users}}
+                <li><b>
+                        <h3>{{id}}</h3>
+                    </b></li>
+                <li><b>
+                        <h3>{{name}}</h3>
+                    </b></li>
+                <li>{{gender}}</li>
+                <li>{{age}}</li>
+
+                <li>
+                    {{!-- <button type="button" class="btn btn-warning"> --}}
+                        <ul>{{#each friends}}
+                            <li>{{id}}</li>
+                            <li>{{name}}</li>
+                            <li>{{gender}}</li>
+                            <li>{{age}}</li>
+
+                            <li>
+                                {{!-- <button type="button" class="btn btn-success"> --}}
+                                    <ul>{{#each mutual_friends}}
+                                        <li>{{id}}</li>
+                                        <li>{{name}}</li>
+                                        <li>{{gender}}</li>
+                                        <li>{{age}}</li>
+                                        {{/each}}
+                                    </ul>
+                                    {{!--
+                                </button> --}}
+                            </li>
+
+                            {{/each}}
+                        </ul>
+                        {{!--
+                    </button> --}}
+                </li>
+
+                {{/each}}
+
+            </ul>
+        </button>
+    </button>
+</div>
