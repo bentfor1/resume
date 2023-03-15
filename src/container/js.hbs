@@ -1,0 +1,80 @@
+<div>
+    <p>
+
+        Js page
+    </p>
+</div>
+<div>
+
+    {{!-- <h1>{{name}}</h1> --}}
+    <h1><span class="badge bg-primary">{{name}}</span></h1>
+    <p>{{description}}</p>
+    <hr>
+    <br>
+    <h2>History</h2>
+    <ul>
+        <li>Year: {{history.year}}</li>
+        <li>Founder: {{history.founder}}</li>
+    </ul>
+    <hr>
+    <br>
+    <h2>Types</h2>
+    <ul>
+        {{#each types}}
+        <li>{{this}}</li>
+        {{/each}}
+    </ul>
+    <hr>
+    <br>
+    <h2>Values</h2>
+    <ul>
+        {{#each values}}
+        <li>{{this}}</li>
+        {{/each}}
+    </ul>
+    <hr>
+    <br>
+    <h2>Syntax</h2>
+    <ul>
+        <li>Variables: {{syntax.variables}}</li>
+        <li>Functions: {{syntax.functions}}</li>
+        <li>Conditionals: {{syntax.conditionals}}</li>
+        <li>Loops: {{syntax.loops}}</li>
+        <li>Classes: {{syntax.classes}}</li>
+    </ul>
+    <hr>
+    <br>
+    <h2>Features</h2>
+    <ul>
+        {{#each features}}
+        <li><span class="badge text-bg-warning">{{this}}</span></li>
+        {{/each}}
+    </ul>
+    <hr>
+    <br>
+    <h2>Libraries</h2>
+    <ul>
+        {{#each libraries}}
+        <li>{{this}}</li>
+        {{/each}}
+    </ul>
+    <hr>
+    <br>
+    <h2>Tools</h2>
+    <ul>
+        {{#each tools}}
+        <li>{{this}}</li>
+        {{/each}}
+    </ul>
+    <hr>
+    <br>
+    <h2>Community</h2>
+    <ul>
+        {{#each community}}
+        <li><span class="badge text-bg-primary">{{this.name}} ({{this.type}})</span></li>
+        {{!-- <li>{{this.name}} ({{this.type}})</li> --}}
+        {{/each}}
+    </ul>
+
+
+</div>
