@@ -1,0 +1,62 @@
+<div>
+    <p>
+
+        Program page </p>
+</div>
+<div>
+    <h1>{{program.excursion.name}}</h1>
+    <p>Location: {{program.excursion.location.city}}, {{program.excursion.location.country}}</p>
+    <p>Date: {{program.excursion.date}}</p>
+
+    {{#each program.excursion.program}}
+    <h2>{{this.name}}</h2>
+    <p>Type: {{this.type}}</p>
+    <p>Duration: {{this.duration}} hours</p>
+
+    {{#if this.details.museum}}
+    <h3>Museum Visit</h3>
+    <p>Museum name: {{this.details.museum.name}}</p>
+    <p>Address: {{this.details.museum.location.address}}, {{this.details.museum.location.city}},
+        {{this.details.museum.location.country}}</p>
+
+    {{#each this.details.museum.exhibits}}
+    <h4>{{this.name}}</h4>
+    <p>Artist: {{#if this.artist}}{{this.artist}}{{else}}Unknown{{/if}}</p>
+    <p>Description: {{this.description}}</p>
+    <p>Audio guide: {{#if this.audio_guide}}Available{{else}}Not available{{/if}}</p>
+    {{/each}}
+
+    <h4>Guide</h4>
+    <p>Name: {{this.details.guide.name}}</p>
+    <p>Language: {{this.details.guide.language}}</p>
+    <p>Rating: {{this.details.guide.rating}}</p>
+
+    {{else if this.details.venue}}
+    <h3>Cultural Show</h3>
+    <p>Venue name: {{this.details.venue.name}}</p>
+    <p>Address: {{this.details.venue.location.address}}, {{this.details.venue.location.city}},
+        {{this.details.venue.location.country}}</p>
+
+    {{#each this.details.performers}}
+    <h4>{{this.name}}</h4>
+    <p>Type: {{this.type}}</p>
+    {{/each}}
+
+    <h4>Guide</h4>
+    <p>Name: {{this.details.guide.name}}</p>
+    <p>Language: {{this.details.guide.language}}</p>
+    <p>Rating: {{this.details.guide.rating}}</p>
+
+    {{/if}}
+    {{#each items}}
+    {{log "Item:" .}}
+    {{log "Index:" @index}}
+    {{log "First:" @first}}
+    {{log "Last:" @last}}
+    {{log "Even:" @even}}
+    {{log "Odd:" @odd}}
+    {{log "Key:" @key}}
+    {{log "Item:" this}}
+    {{/each}}
+    {{/each}}
+</div>
