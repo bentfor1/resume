@@ -1,0 +1,19 @@
+<div class="container mt-5">
+    <h2>{{goodsBlock.title}}</h2>
+    <div class="row">
+        {{#each goodsBlock.cards}}
+        <div class="col-sm-4 mb-3">
+            <div class="card text-bg-secondary">
+                <div class="card-body">
+                    <img class="card-img-top" src={{image}} alt="">
+                    <h5 class="card-header">{{this.title}}
+                        {{#if this.isHot}}<span class="badge text-bg-warning rounded-pill">HOT</span>{{/if}}
+                        {{#if this.idNew}}<span class="badge text-bg-primary rounded-pill">New</span>{{/if}}
+                    </h5>
+                    <p class="card-text">{{this.description}}</p>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>

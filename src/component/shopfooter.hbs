@@ -1,0 +1,21 @@
+<footer class="bg-transparent">
+    <div class="container">
+        <div class="row">
+            {{#each footer}}
+            <div class="col-md-2">
+                <ul class="list-unstyled">
+                    {{#each this}}
+                    <li>
+                        {{#if @last }}
+                        <span class="disabled">{{text}}</span>
+                        {{else}}
+                        <a href="{{link}}" class="custom-link">{{text}}</a>
+                        {{/if}}
+                    </li>
+                    {{/each}}
+                </ul>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+</footer>
