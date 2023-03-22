@@ -1,0 +1,109 @@
+<main>
+    <br>
+    <br>
+    <nav>
+        <ol class="breadcrumb">
+            {{#each breadcrumb}}
+            <li class="breadcrumb-item {{#unless url}}active{{/unless}}">
+                {{#if url}}
+                <a href="{{url}}">{{name}}</a>
+                {{else}}
+                {{name}}
+                {{/if}}
+            </li>
+            {{/each}}
+        </ol>
+    </nav>
+    <br>
+    <br>
+    <div class="row">
+        <div class="card col-6">
+            <img src="{{productData.img}}" class="card-img-top" alt="Product Image">
+            <div class="card-body">
+                <h5 class="card-title">{{productData.info.title}}</h5>
+                <p class="card-text">{{productData.info.about}}</p>
+                <h3 class="card-subtitle mb-2 text-muted">{{productData.info.price}}</h3>
+                <div class="mt-3">
+                    {{#each productData.info.category}}
+                    <span
+                        class="badge {{#if isHot}}badge-danger{{/if}}{{#if isNew}}badge-primary{{/if}}{{#if isBonus}}badge-success{{/if}}">{{name}}</span>
+                    {{/each}}
+                </div>
+                <div class="mt-3">
+                    {{#each productData.actionList}}
+                    <button
+                        class="btn {{#if isWarning}}btn-warning{{/if}}{{#if isError}}btn-danger{{/if}}{{#if isSuccess}}btn-success{{/if}}{{#if isGood}}btn-primary{{/if}} mr-2">{{name}}</button>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-5">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        {{#each productData.item.head}}
+                        <th>{{this}}</th>
+                        {{/each}}
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each productData.item.body}}
+                    <tr>
+                        {{#each this}}
+                        <td>{{this}}</td>
+                        {{/each}}
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+            <div class="card">
+                <div class="card-header">{{productData.param.title}}</div>
+                <ul class="list-group list-group-flush">
+                    {{#each productData.param.list}}
+                    <li class="list-group-item">{{this}}</li>
+                    {{/each}}
+                </ul>
+            </div>
+            <div class="alert {{#if productData.alert.isError}}alert-danger{{else}}alert-success{{/if}} mt-3"
+                role="alert">
+                {{productData.alert.text}}
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <hr>
+    <div class="row mt-4">
+        <div class="col">
+            <h3 class="text-center">{{goodsOtherBlock.title}}</h3>
+        </div>
+    </div>
+    <div class="row mt-3">
+        {{#each goodsOtherBlock.cards}}
+        <div class="col-md-4 mb-3">
+            <div class="card h-100">
+                <img src="{{this.image}}" class="card-img-top" alt="{{this.title}}">
+                <div class="card-body">
+                    <h5 class="card-title">{{this.title}}</h5>
+                    <p class="card-text">{{this.description}}</p>
+                    <ul class="list-group list-group-flush">
+                        {{#if this.isHot}}
+                        <li class="list-group-item list-group-item-danger">HOT</li>
+                        {{/if}}
+                        {{#if this.isNew}}
+                        <li class="list-group-item list-group-item-primary">NEW</li>
+                        {{/if}}
+                    </ul>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+    <br>
+    <br>
+    {{>shopaction}}
+    <br>
+    <br>
+    <hr>
+    {{>shopfooter}}
+</main>
