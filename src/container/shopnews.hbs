@@ -1,0 +1,47 @@
+<main>
+    <br>
+    <br>
+    <nav>
+        <ol class="breadcrumb">
+            {{#each breadcrumb}}
+            <li class="breadcrumb-item {{#unless url}}active{{/unless}}">
+                {{#if url}}
+                <a href="{{url}}">{{name}}</a>
+                {{else}}
+                {{name}}
+                {{/if}}
+            </li>
+            {{/each}}
+        </ol>
+    </nav>
+    <div class="container my-4">
+        <div class="row">
+            <div class="col-md-12">
+                <img src="{{newsData.photo}}" alt="Cat" class="img-fluid">
+            </div>
+            <div class="col-md-12">
+                <h2>{{newsData.head.heading}}</h2>
+                <p>{{newsData.head.description}}</p>
+            </div>
+        </div>
+        <hr>
+        {{#each newsData.body}}
+        <div class="row mb-4">
+            <div class="col-md-12">
+                <h3>{{this.title}}</h3>
+                <p>{{this.text}}</p>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+    <br>
+    <hr>
+    {{> shopcard}}
+    <br>
+    <hr>
+    {{>shopaction}}
+    <br>
+    <br>
+    <hr>
+    {{>shopfooter}}
+</main>
