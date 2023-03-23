@@ -1,0 +1,357 @@
+<main>
+    <br>
+    <br>
+    <br>
+    <h1>{{header}}</h1>
+    <br>
+    <br>
+    <div class="row md-3 ms-2">
+        <div class="col-8">
+            <h3>{{contacts_data.title}}</h3>
+            {{#each contacts_data.buttons}}
+            <button class="btn {{#if isPrimary}}btn-warning{{else}}btn-outline-warning{{/if}}">{{text}}</button>
+            {{/each}}
+            <form>
+                <div class="row">
+                    {{#with contacts_data.form}}
+                    <div class="form-group col-5">
+                        <label for="surname">{{input.surname.lable}}</label>
+                        <input type="text" class="form-control" id="surname" placeholder="{{input.surname.placeholder}}"
+                            aria-describedby="surnameHelp">
+                        <small id="surnameHelp" class="form-text text-muted">{{input.surname.caption}}</small>
+                    </div>
+                    <div class="form-group col-5">
+                        <label for="name">{{input.name.lable}}</label>
+                        <input type="text" class="form-control" id="name" placeholder="{{input.name.placeholder}}"
+                            aria-describedby="nameHelp">
+                        <small id="nameHelp" class="form-text text-muted">{{input.name.caption}}</small>
+                    </div>
+                    <div class="form-group col-5">
+                        <label for="phone">{{input.phone.lable}}</label>
+                        <input type="tel" class="form-control" id="phone" placeholder="{{input.phone.placeholder}}"
+                            aria-describedby="phoneHelp">
+                        <small id="phoneHelp" class="form-text text-muted">{{input.phone.caption}}</small>
+                    </div>
+                    <div class="form-group col-5">
+                        <label for="email">{{input.email.lable}}</label>
+                        <input type="email" class="form-control" id="email" placeholder="{{input.email.placeholder}}"
+                            aria-describedby="emailHelp">
+                        <small id="emailHelp" class="form-text text-muted">{{input.email.caption}}</small>
+                    </div>
+                    <hr>
+                    <br>
+                    <div class="form-check form-switch">
+                        {{#each switch}}
+                        <input type="checkbox" class="form-check-input" id="newArrivals" {{#if isActive}}checked{{/if}}>
+                        <label class="form-check-label" for="newArrivals">{{text}}</label>
+                        <br>
+                        <br>
+                        {{/each}}
+                    </div>
+                    {{/with}}
+                    <hr>
+                </div>
+            </form>
+            <div class="col-12">
+                <div class="form-group">
+                    <label>
+                        <h3>{{delivery.title}}</h3>
+                    </label>
+                    <div class="form-group">
+                        <label for="city-select">{{delivery.select.[0].label}}</label>
+                        <select class="form-control text-right" id="city-select" name="city-select">
+                            {{#each delivery.select.[0].options}}
+                            <option value="{{this.value}}">{{this.text}}</option>
+                            {{/each}}
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="district-select">{{delivery.select.[1].label}}</label>
+                        <select class="form-control" id="district-select" name="district-select">
+                            {{#each delivery.select.[1].options}}
+                            <option value="{{this.value}}">{{this.text}}</option>
+                            {{/each}}
+                        </select>
+                    </div>
+
+                    <!-- Delivery type radio-buttons -->
+                    <div class="form-group">
+                        <div class="form-check">
+                            <div class="row g-5">
+                                <div class="col-6">
+                                    <label>{{delivery.delivery_type.[0].type}}</label>
+                                    <input class="form-check-input" type="radio" name="delivery-type"
+                                        id="self-pickup-radio" value="{{delivery.delivery_type.[0].value}}">
+                                </div>
+                                <div class="col-6 text-right">
+                                    <label class="form-check-label" for="self-pickup-radio">
+                                        {{delivery.delivery_type.[0].value}}</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-check">
+                            <div class="row g-5">
+                                <div class="col-6">
+                                    <label>{{delivery.delivery_type.[1].type}}</label>
+                                    <input class="form-check-input" type="radio" name="delivery-type" id="courier-radio"
+                                        value="{{delivery.delivery_type.[1].value}}">
+                                </div>
+                                <div class="col-6 text-right">
+                                    <label class="form-check-label"
+                                        for="courier-radio">{{delivery.delivery_type.[1].value}}</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-check">
+                            <div class="row g-5">
+                                <div class="col-6">
+                                    <label>{{delivery.delivery_type.[2].type}}</label>
+                                    <input class="form-check-input" type="radio" name="delivery-type"
+                                        id="self-pickup-shop-radio" value="{{delivery.delivery_type.[2].value}}">
+                                </div>
+                                <div class="col-6 text-right">
+                                    <label class="form-check-label"
+                                        for="self-pickup-shop-radio">{{delivery.delivery_type.[2].value}}</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-check">
+                            <div class="row g-5">
+                                <div class="col-6">
+                                    <label>{{delivery.delivery_type.[3].type}}</label>
+                                    <input class="form-check-input" type="radio" name="delivery-type"
+                                        id="international-delivery-radio" value="{{delivery.delivery_type.[3].value}}">
+                                </div>
+                                <div class="col-6 text-right">
+                                    <label class="form-check-label"
+                                        for="international-delivery-radio">{{delivery.delivery_type.[3].value}}</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+            <br>
+            <hr>
+        </div>
+        <div class="col-4">
+            <div class="">
+                <div class="card">
+                    <button type="button" class="btn btn-primary me-1 my-1">{{action_block.[0].text}}</button>
+                    <button type="button" class="btn btn-danger me-5 my-1">{{action_block.[1].text}}</button>
+                    <button type="button" class="btn btn-info me-3 my-1">{{action_block.[2].text}}</button>
+                </div>
+            </div>
+
+            <br>
+            <br>
+
+            <div class="card">
+                <h1>{{total.title}}</h1>
+
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Назва</th>
+                            <th>Ціна</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each total.item_list}}
+                        <tr>
+                            <td>{{this.name}}</td>
+                            <td>{{this.price}}</td>
+                        </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+
+                <div class="">
+
+                    <ul class="list-unstyled">
+                        {{#each total.additional_info}}
+                        <li><strong>{{this.text}}:</strong> {{this.value}}</li>
+                        {{/each}}
+                    </ul>
+                </div>
+                <br>
+                <div class="">
+                    <ul class="list-unstyled">
+                        {{#each total.otal_pric}}
+                        <li><strong>{{this.text}}:</strong> {{this.value}}</li>
+                        {{/each}}
+                    </ul>
+                </div>
+                {{#each total.button}}
+                <button class="btn {{#if isPrimary}}btn-primary{{else}}btn-outline-primary{{/if}}">{{text}}</button>
+                {{/each}}
+            </div>
+        </div>
+        <div class="col-8 form-group">
+            <h3>Оплата</h3>
+            <div class="form-check">
+                <input name="comp" class="form-check-input" type="radio">
+                <label class="form-label">{{delivery.payment.[0].type}}</label>
+                <label class="form-check-label text-end form-select-sm">{{delivery.payment.[0].description}}</label>
+            </div>
+            <div class="form-check">
+                <input name="comp" class="form-check-input" type="radio">
+                <label class="form-label">{{delivery.payment.[1].type}}</label>
+                <label class="form-check-label text-end form-select-sm">{{delivery.payment.[1].description}}</label>
+            </div>
+            <hr>
+            <br>
+        </div>
+        <div class="row">
+            <h3>Контактні дані отримувача</h3>
+            <div class="col-4 me-2">
+                {{#with delivery.contact}}
+                <label class="form-label">{{surname.lable}}</label>
+                <input type="text" class="form-control" id="surname" placeholder="Іванов"
+                    aria-describedby="surnameHelp">
+                {{!-- <input class="form-control"> --}}
+                <div class="form-text text-second">{{surname.caption}}</div>
+                {{/with}}
+                <br>
+            </div>
+            <div class="col-4">
+                {{#with delivery.contact}}
+                <label class="form-label">{{name.lable}}</label>
+                <input type="text" class="form-control" id="name" placeholder="Іван" aria-describedby="nameHelp">
+                {{!-- <input class="form-control"> --}}
+                <div class="form-text text-second">{{name.caption}}</div>
+                {{/with}}
+                <br>
+            </div>
+            <div class="col-4 me-2">
+                {{#with delivery.contact}}
+                <label class="form-label">{{phone.lable}}</label>
+                <input type="text" class="form-control" id="phone" placeholder="+38 (XXX) XXX XX XX"
+                    aria-describedby="phoneHelp">
+                {{!-- <input class="form-control"> --}}
+                <div class="form-text text-second">{{phone.caption}}</div>
+                {{/with}}
+            </div>
+            <div class="col-4">
+                {{#with delivery.contact}}
+                <label class="form-label">{{email.lable}}</label>
+                <input type="text" class="form-control" id="email" placeholder="ivanivanov@ukr.net"
+                    aria-describedby="emailHelp">
+                {{!-- <input class="form-control"> --}}
+                <div class="form-text text-second">{{email.caption}}</div>
+                {{/with}}
+            </div>
+            <div class="col-8">
+                <hr>
+                <br>
+                {{#with delivery.coment}}
+                <label class="form-label">{{lable}}</label>
+                <input type="text" class="form-control" id="email" placeholder="Я хочу, щоб"
+                    aria-describedby="comentHelp">
+                {{!-- <input class="form-control"> --}}
+
+                {{/with}}
+            </div>
+            <div class="col-8">
+                <hr>
+                <br>
+                <h3>Купони</h3>
+                <form>
+                    <div class="form-group">
+                        <label for="available_coupon">{{coupon.select.available_coupon.lable}}</label>
+                        <select class="form-control" id="available_coupon" name="available_coupon">
+                            <option value="" selected disabled>{{coupon.select.available_coupon.placeholder}}</option>
+                            {{#each coupon.select.available_coupon.options}}
+                            <option value="{{this.value}}">{{this.text}}</option>
+                            {{/each}}
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="friend_coupon">{{coupon.select.friend_coupon.lable}}</label>
+                        <select class="form-control" id="friend_coupon" name="friend_coupon">
+                            <option value="" selected disabled>{{coupon.select.friend_coupon.placeholder}}</option>
+                            {{#each coupon.select.friend_coupon.options}}
+                            <option value="{{this.value}}">{{this.text}}</option>
+                            {{/each}}
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="friend">{{coupon.add.friend.lable}}</label>
+                        <input type="text" class="form-control" id="friend" name="friend"
+                            placeholder="{{coupon.add.friend.placeholder}}">
+                        <small id="friendHelp" class="form-text text-muted">{{coupon.add.friend.caption}}</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="colleague">{{coupon.add.colleague.lable}}</label>
+                        <input type="text" class="form-control" id="colleague" name="colleague"
+                            placeholder="{{coupon.add.colleague.placeholder}}">
+                        <small id="colleagueHelp" class="form-text text-muted">{{coupon.add.colleague.caption}}</small>
+
+                    </div>
+                </form>
+            </div>
+            <div class="col-8">
+                <hr>
+                <br>
+                <h3>Допоможи нам краще тебе зрозуміти</h3>
+                <form>
+                    <div class="form-group">
+                        <label for="equipmentType">{{quiz.preference.title}}</label>
+                        <select class="form-control" id="equipmentType">
+                            {{#each quiz.preference.options}}
+                            <option value="{{this}}">{{this}}</option>
+                            {{/each}}
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="experience">{{quiz.your_expirience.label}}</label>
+                        <input type="text" class="form-control" id="experience">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="purchaseFrequency">{{quiz.purchase_frequency.label}}</label>
+                        <select class="form-control" id="purchaseFrequency">
+                            <option value="" disabled selected>{{quiz.purchase_frequency.placeholder}}</option>
+                            {{#each quiz.purchase_frequency.options}}
+                            <option value="{{this.value}}">{{this.text}}</option>
+                            {{/each}}
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>{{quiz.factors.title}}</label>
+                        {{#each quiz.factors.options}}
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="{{this}}" id="{{this}}">
+                            <label class="form-check-label" for="{{this}}">
+                                {{this}}
+                            </label>
+                        </div>
+                        {{/each}}
+                    </div>
+
+
+                </form>
+
+            </div>
+
+
+        </div>
+    </div>
+    <hr>
+    <br>
+</main>
+{{>shopfooter}}
