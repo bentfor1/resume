@@ -40,7 +40,11 @@
     {{#each purchase.itemList}}
     <div class="card my-5">
         <div class="row mt-3 ">
+ shopprofile
             <div class="col-3">
+=======
+            <div class="col-4">
+ master
                 <p>{{number}}
                 <h5>{{status}}</h5>
                 </p>
@@ -50,6 +54,7 @@
                 <h5>{{amount.value}}</h5>
                 </p>
             </div>
+ shopprofile
             <div class="col-5">
                 {{#each images}}
                 <img src="{{this}}" class="">
@@ -185,6 +190,32 @@
             </div>
         </div>
     </div><br><br>
+=======
+            <div class="col-4">
+                <ul class="row g-8">
+                    <div class="col-8">
+                        <li class="list-group-item">{{this.price.title}}: {{this.price.value}}</li>
+                    </div>
+                    <div class="col-3">
+                        <li class="list-group-item">{{this.amount}}</li>
+                    </div>
+                </ul>
+            </div>
+
+            <div class="col-2 my-3">
+                <button type="button" class="btn btn-primary mb-2">{{this.buttons.[0].text}}</button>
+                <button type="button" class="btn btn-danger">{{this.buttons.[1].text}}</button>
+            </div>
+            <div class="col-2 my-3">
+                <button type="button" class="btn btn-primary mb-2">{{this.buttons.[0].text}}</button>
+                <button type="button" class="btn btn-danger">{{this.buttons.[1].text}}</button>
+            </div>
+
+        </div>
+    </div>
+    {{/each}}
+
+ master
     {{!-- Footer --}}
     {{>shopfooter}}
 
