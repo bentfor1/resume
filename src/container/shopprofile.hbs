@@ -40,7 +40,11 @@
     {{#each purchase.itemList}}
     <div class="card my-5">
         <div class="row mt-3 ">
+ shopprofile
+            <div class="col-3">
+=======
             <div class="col-4">
+ master
                 <p>{{number}}
                 <h5>{{status}}</h5>
                 </p>
@@ -50,6 +54,143 @@
                 <h5>{{amount.value}}</h5>
                 </p>
             </div>
+ shopprofile
+            <div class="col-5">
+                {{#each images}}
+                <img src="{{this}}" class="">
+                {{/each}}
+            </div>
+            <div class="col-1">
+
+                <a href="{{button.link}}" class="btn {{#if button.isPrimary}}btn-primary{{else}}btn-secondary{{/if}}">
+                    {{button.text}}
+                </a>
+            </div>
+        </div>
+    </div>
+    {{/each}}
+    <h1>Особиста інформація</h1>
+    {{!-- Великі картки --}}
+    {{!-- Особисті дані --}}
+
+    <div class="card ">
+        <div class="card-body">
+            <h2 class="card-title">{{userInfo.profileData.title}}</h2>
+            <ul>
+                <div class="row">
+                    <div class="col-4">
+                        <li class="list-group-item">
+                            <strong>{{userInfo.profileData.fullName.surname.title}}:<br></strong>
+                            {{userInfo.profileData.fullName.surname.value}}
+                        </li>
+                    </div>
+                    <div class="col-4">
+                        <li class="list-group-item">
+                            <strong>{{userInfo.profileData.fullName.name.title}}:<br></strong>
+                            {{userInfo.profileData.fullName.name.value}}
+                        </li>
+                    </div>
+                    <div class="col-4">
+                        <li class="list-group-item">
+                            <strong>{{userInfo.profileData.fullName.middleName.title}}:<br></strong>
+                            {{userInfo.profileData.fullName.middleName.value}}
+                        </li>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-4">
+                        <li class="list-group-item">
+                            <strong>{{userInfo.profileData.otherInfo.birthday.title}}:<br></strong>
+                            {{userInfo.profileData.otherInfo.birthday.value}}
+                        </li>
+                    </div>
+                    <div class="col-4">
+                        <li class="list-group-item">
+                            <strong>{{userInfo.profileData.otherInfo.sex.title}}:<br></strong>
+                            {{userInfo.profileData.otherInfo.sex.value}}
+                        </li>
+                    </div>
+                    <div class="col-4">
+                        <li class="list-group-item">
+                            <strong>{{userInfo.profileData.otherInfo.language.title}}:<br></strong>
+                            {{userInfo.profileData.otherInfo.language.value}}
+                        </li>
+                    </div>
+                </div>
+            </ul>
+
+            <div class="ms-2 row">
+
+                {{#each userInfo.buttons}}
+                <div class="col-4">
+                    <a href="{{this.link}}"
+                        class="btn {{#if this.isPrimary}}btn-primary{{else if this.isSecondary}}btn-outline-secondary{{else if this.isDanger}}btn-outline-danger{{/if}}">{{this.text}}</a>
+                </div>
+                {{/each}}
+
+            </div>
+
+        </div>
+    </div>
+    <br><br>
+    {{!-- Отримувачі --}}
+    <div class="card ms-2">
+        <div class="card-body">
+            <h2>{{userInfo.recipients.title}}</h2>
+            <div class="card-body row">
+                {{#each userInfo.recipients.users}}
+                <div class="mb-3 col-4">
+                    <div class="card-body">
+                        <h5 class="card-title">{{this.name}}</h5>
+                        <p class="card-text"><strong>{{userInfo.recipients.users.phone.title}}</strong> {{this.phone}}
+                        </p>
+                        <a href="{{this.button.link}}" class="btn btn-primary">{{this.button.text}}</a>
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+    <br><br>
+    {{!-- Контакти --}}
+    <div class="card mt-4">
+        <div class="card-body">
+            <h2>{{userInfo.contacts.title}}</h2>
+            <div class="card-body">
+                <ul>
+                    <div class="row">
+                        <div class="col-4">
+                            <li class="list-group-item ">
+                                <strong>{{userInfo.contacts.contactData.phone.title}}:<br></strong>
+                                {{userInfo.contacts.contactData.phone.value}}
+                            </li>
+                        </div>
+                        <div class="col-4">
+                            <li class="list-group-item">
+                                <strong>{{userInfo.contacts.contactData.additionalPhone.title}}:<br></strong>
+                                {{userInfo.contacts.contactData.additionalPhone.value}}
+                            </li>
+                        </div>
+                        <div class="col-4">
+                            <li class="list-group-item">
+                                <strong>{{userInfo.contacts.contactData.email.title}}:<br></strong>
+                                {{userInfo.contacts.contactData.email.value}}
+                            </li>
+                        </div>
+                    </div>
+                </ul>
+                <div class="ms-2 row">
+                    {{#each userInfo.contacts.buttons}}
+                    <div class="col-4">
+                        <a href="{{this.link}}"
+                            class="btn {{#if this.isPrimary}}btn-primary{{else if this.isSecondary}}btn-outline-secondary{{else if this.isDanger}}btn-outline-danger{{/if}}">{{this.text}}</a>
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+    </div><br><br>
+=======
             <div class="col-4">
                 <ul class="row g-8">
                     <div class="col-8">
@@ -74,7 +215,7 @@
     </div>
     {{/each}}
 
-
+ master
     {{!-- Footer --}}
     {{>shopfooter}}
 
