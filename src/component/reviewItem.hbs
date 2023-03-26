@@ -1,0 +1,75 @@
+{{#each reviewList}}
+<div class="card mb-3">
+    <div class="card-header">
+        <div class="row">
+            <div class="col">
+                <h3>{{title.userName}}</h3>
+                <h6 class="card-title">{{title.caption}}</h6>
+            </div>
+            <div class="col-auto">
+                <h6>{{title.date}}</h6>
+            </div>
+        </div>
+    </div>
+    <div class="card-body">
+        <div class="row mb-3">
+            <div class="col-7">
+                <h6 class="card-subtitle text-muted">{{reviewBody.seller.title}}:
+                    {{reviewBody.seller.value}}</h6>
+            </div>
+            <br>
+            <br>
+            <div class="col-7">
+                <h6 class="card-subtitle text-muted">{{reviewBody.rating.title}}:
+                    {{reviewBody.rating.value}}</h6>
+            </div>
+        </div>
+        <br>
+        <br>
+        <div class="row mb-3">
+            <div class="col">
+                {{#each reviewBody.text}}
+                <p class="card-text">{{this}}</p>
+                {{/each}}
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-7">
+                <h5 class="card-subtitle text-muted">{{reviewBody.advantages.title}}:</h5>
+                <p class="card-text">{{reviewBody.advantages.text}}</p>
+            </div>
+            <br>
+            <br>
+            <div class="col-7">
+                <h5 class="card-subtitle text-muted">{{reviewBody.disadvantages.title}}:</h5>
+                <p class="card-text">{{reviewBody.disadvantages.text}}</p>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col">
+                {{#each reviewBody.images}}
+                <img src="{{this}}" alt="review image" class="img-thumbnail mr-2 mb-2">
+                {{/each}}
+            </div>
+        </div>
+        <br>
+        <br>
+
+        {{#if reviewBody.coments}}
+        {{#each reviewBody.coments}}
+        <div class="card">
+            <div class="media mb-3">
+                <div class="media-body">
+                    <h6 class="mt-0">{{this.userName}}</h6>
+                    <p>{{this.text}}</p>
+                    <small class="text-muted">{{this.date}}</small>
+                </div>
+            </div>
+        </div>
+        <br>
+        {{/each}}
+        {{/if}}
+
+    </div>
+</div>
+{{/each}}

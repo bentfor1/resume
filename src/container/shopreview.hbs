@@ -1,0 +1,96 @@
+<main>
+    {{!-- Інформація про продукт та відгуки--}}
+    <div class="container mt-4">
+        <div class="row">
+            {{!-- Відгуки --}}
+            <div class="col-lg-8">
+                <div class="card">
+                    <div class="card-header">
+                        <h1>{{formBlock.header}}</h1>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h6>{{formBlock.rating.title}}:
+                                    {{formBlock.rating.value}}</h6>
+                            </div>
+                            <div class="col-md-12">
+                                <ul class="nav nav-tabs">
+                                    {{#each formBlock.actionBlock.tabs}}
+                                    <li class="nav-item">
+                                        <a class="nav-link {{#if isActive}}active{{/if}}" href="#">{{text}}</a>
+                                    </li>
+                                    {{/each}}
+                                </ul>
+                                <br>
+                                <hr>
+                                <br>
+                                <div class="input-group mt-3">
+                                    <input type="text" class="form-control"
+                                        placeholder="{{formBlock.actionBlock.field.placeholder}}">
+                                    <div class="input-group-append">
+                                        <a href="{{formBlock.actionBlock.field.button.link}}"
+                                            class="btn btn-secondary">{{formBlock.actionBlock.field.button.text}}</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <hr>
+                        <br>
+                        <div class="mt-4">
+                            <h2>{{formBlock.feedbackBlock.title}}</h2>
+                            <div class="btn-group mt-2">
+                                {{#each formBlock.feedbackBlock.buttons}}
+                                <div class="col-5"><a href="{{link}}"
+                                        class="btn {{#if isWarning}}btn-warning{{/if}}{{#if isSuccess}}btn-success{{/if}}{{#if isDanger}}btn-danger{{/if}}">{{text}}</a>
+                                </div>
+                                {{/each}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{!-- Інформація --}}
+            <div class="col-lg-4 mt-4 mt-lg-0">
+                <div class="card">
+                    <img class="card-img-top" src="{{formBlock.goodsInfo.photo}}" alt="Card image cap">
+                    <h5 class="card-title">{{formBlock.goodsInfo.name}}</h5>
+                </div>
+                <br>
+                <div class="card">
+                    <p class="card-text">{{formBlock.goodsInfo.price}}</p>
+                    <div class="btn-group">
+                        {{#each formBlock.goodsInfo.buttons}}
+                        <a href="{{link}}"
+                            class="btn {{#if isPrimary}}btn-primary{{/if}}{{#if isSecondary}}btn-secondary{{/if}}">{{text}}</a>
+                        {{/each}}
+                    </div>
+                </div>
+                <br>
+                <div class="card">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <h6>{{formBlock.goodsInfo.seller.title}}</h6>
+                        </div>
+                        <div class="col-sm-8">
+                            <p>{{formBlock.goodsInfo.seller.value}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <hr>
+    <br>
+    {{!-- Відгуки покупців --}}
+    {{>reviewItem}}
+    <br>
+    <br>
+    {{>shopaction}}
+    <br>
+    <br>
+    <hr>
+    {{>shopfooter}}
+</main>
