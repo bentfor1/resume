@@ -1,0 +1,128 @@
+<main>
+    {{!-- Хлібні крихти --}}
+    <br>
+    <br>
+    <ol class="breadcrumb">
+        {{#each breadcrumb}}
+        <li class="breadcrumb-item {{#unless url}}active{{/unless}}">
+            {{#if url}}
+            <a href="{{url}}">{{name}}</a>
+            {{else}}
+            {{name}}
+            {{/if}}
+        </li>
+        {{/each}}
+    </ol>
+    <br>
+    <h1>{{header}}</h1>
+    <br>
+    {{!-- Селекти (вибір опцій) --}}
+    <div class="row">
+        <div class="col-md-4">
+            <label for="price-sort">{{sortBlock.[0].placeholder}}</label>
+            <select class="form-select" id="price-sort">
+                {{#each sortBlock.[0].options}}
+                <option value="{{this.value}}">{{this.text}}</option>
+                {{/each}}
+            </select>
+        </div>
+        <div class="col-md-4">
+            <label for="date-sort">{{sortBlock.[1].placeholder}}</label>
+            <select class="form-select" id="date-sort">
+                {{#each sortBlock.[1].options}}
+                <option value="{{this.value}}">{{this.text}}</option>
+                {{/each}}
+            </select>
+        </div>
+        <div class="col-md-4">
+            <label for="rating-sort">{{sortBlock.[2].placeholder}}</label>
+            <select class="form-select" id="rating-sort">
+                {{#each sortBlock.[2].options}}
+                <option value="{{this.value}}">{{this.text}}</option>
+                {{/each}}
+            </select>
+        </div>
+    </div>
+    <br>
+    <br>
+    {{!-- Фільтри --}}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <h5>{{filterBlock.sellers.title}}</h5>
+                    <div class="list-group">
+                        {{#each filterBlock.sellers.list}}
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="{{this.value}}" id="{{this.id}}">
+                            <label class="form-check-label" for="{{this.id}}">
+                                {{this.value}}
+                            </label>
+                        </div>
+                        {{/each}}
+                    </div>
+                </div>
+                <br>
+                <br>
+                <div class="card">
+                    <h5>{{filterBlock.brands.title}}</h5>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="{{filterBlock.brands.input.placeholder}}">
+                    </div>
+                    <div class="list-group">
+                        {{#each filterBlock.brands.options}}
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="{{this.value}}" id="{{this.id}}">
+                            <label class="form-check-label" for="{{this.id}}">
+                                {{this.value}}
+                            </label>
+                        </div>
+                        {{/each}}
+                    </div>
+                </div>
+                <br>
+                <br>
+                <div class="card">
+                    <h5>{{filterBlock.price.title}}</h5>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="{{filterBlock.price.range.from}}">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="{{filterBlock.price.range.to}}">
+                    </div>
+                    <a href="{{filterBlock.price.button.link}}"
+                        class="btn btn-primary">{{filterBlock.price.button.text}}</a>
+                </div>
+                <br>
+                <br>
+                <div class="card">
+                    {{#each filterBlock.filterList}}
+                    <h5>{{this.title}}</h5>
+                    <div class="list-group">
+                        {{#each this.options}}
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="{{this.value}}" id="{{this.id}}">
+                            <label class="form-check-label" for="{{this.id}}">
+                                {{this.value}}
+                            </label>
+                        </div>
+                        {{/each}}
+                    </div>
+                    {{/each}}
+                </div>
+                <br>
+                <br>
+            </div>
+            {{!-- Карточки товарів --}}
+            {{>catalogItem}}
+        </div>
+
+    </div>
+    <br>
+    <br>
+    {{>shopaction}}
+    <br>
+    <br>
+    <hr>
+    {{>shopfooter}}
+</main>
