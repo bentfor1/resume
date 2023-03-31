@@ -1,11 +1,8 @@
-<div>
-    <p> Education page in progress...</p>
-</div>
-<div>
+<div class="container my-5">
 
     {{#with main}}
-    <main>
-        <section>
+    <main class="row">
+        <section class="col-6">
 
             {{>title data="Universities" big=true}}
             <ul>
@@ -16,7 +13,7 @@
                 {{/each}}
             </ul>
         </section>
-        <section>
+        <section class="col-6">
 
             {{>title data="My certificates" big=false}}
 

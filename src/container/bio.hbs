@@ -1,79 +1,77 @@
-<div>
-    <p>
-
-        Bio page </p>
-</div>
-<div>
-    <h1>{{name}}</h1>
-    <p><strong>Birthdate:</strong> {{birthdate}}</p>
-    <p><strong>Birthplace:</strong> {{birthplace}}</p>
-    <p><strong>Deathdate:</strong> {{deathdate}}</p>
-    <p><strong>Deathplace:</strong> {{deathplace}}</p>
-    <p><strong>Nationality:</strong> {{nationality}}</p>
-    <p><strong>Occupation:</strong> {{occupation}}</p>
-    <p><strong>Known for:</strong></p>
-    <hr>
-    <br>
-    <ul>
-        {{#each known_for}}
-        <li>{{this}}</li>
-        {{/each}}
-    </ul>
-    <p><strong>Education:</strong></p>
-    <ul>
-        {{#each education}}
-        <li>{{degree}} in {{field}}, {{institution}}, {{year}}</li>
-        {{/each}}
-    </ul>
-    <p><strong>Notable Publications:</strong></p>
-    <ul>
-        {{#each notable_publications}}
-        <li>{{title}}, {{year}}, {{publisher}}</li>
-        {{/each}}
-    </ul>
-    <p><strong>Partners:</strong></p>
-    <ul>
-        {{#each partners}}
-        <li>{{name}}, {{relationship}} ({{years}})</li>
-        {{/each}}
-    </ul>
-    <p><strong>Awards:</strong></p>
-    <ul>
-        {{#each awards}}
-        <li>{{title}}, {{year}} - {{description}}</li>
-        {{/each}}
-    </ul>
-    <p><strong>Influences:</strong></p>
-    <ul>
-        {{#each influences}}
-        <li>{{this}}</li>
-        {{/each}}
-    </ul>
-    <p><strong>Influenced:</strong></p>
-    <ul>
-        {{#each influenced}}
-        <li>{{this}}</li>
-        {{/each}}
-    </ul>
-    <p><strong>Quotes:</strong></p>
-    <ul>
-        {{#each quotes}}
-        <li>{{this}}</li>
-        {{/each}}
-    </ul>
-    <p><strong>Major Discoveries:</strong></p>
-    <ul>
-        {{#each major_discoveries}}
-        <li>{{title}} ({{year}}) - {{description}}</li>
-        {{/each}}
-    </ul>
-    <p><strong>Contributions:</strong></p>
-    <ul>
-        <li>{{contributions.title}} in {{contributions.field}}, {{contributions.year}} - {{contributions.description}}
-        </li>
-    </ul>
-</div>
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <h1>{{name}}</h1>
+            <p><strong>Birthdate:</strong> {{birthdate}}</p>
+            <p><strong>Birthplace:</strong> {{birthplace}}</p>
+            <p><strong>Deathdate:</strong> {{deathdate}}</p>
+            <p><strong>Deathplace:</strong> {{deathplace}}</p>
+            <p><strong>Nationality:</strong> {{nationality}}</p>
+            <p><strong>Occupation:</strong> {{occupation}}</p>
+        </div>
+        <div class="col-6">
+            <h2>Details</h2>
+            <p><strong>Known for:</strong></p>
+            <ul class="list-unstyled">
+                {{#each known_for}}
+                <li>{{this}}</li>
+                {{/each}}
+            </ul>
+            <p><strong>Education:</strong></p>
+            <ul class="list-unstyled">
+                {{#each education}}
+                <li>{{degree}} in {{field}}, {{institution}}, {{year}}</li>
+                {{/each}}
+            </ul>
+            <p><strong>Notable Publications:</strong></p>
+            <ul class="list-unstyled">
+                {{#each notable_publications}}
+                <li>{{title}}, {{year}}, {{publisher}}</li>
+                {{/each}}
+            </ul>
+            <p><strong>Partners:</strong></p>
+            <ul class="list-unstyled">
+                {{#each partners}}
+                <li>{{name}}, {{relationship}} ({{years}})</li>
+                {{/each}}
+            </ul>
+            <p><strong>Awards:</strong></p>
+            <ul class="list-unstyled">
+                {{#each awards}}
+                <li>{{title}}, {{year}} - {{description}}</li>
+                {{/each}}
+            </ul>
+            <p><strong>Influences:</strong></p>
+            <ul class="list-unstyled">
+                {{#each influences}}
+                <li>{{this}}</li>
+                {{/each}}
+            </ul>
+            <p><strong>Influenced:</strong></p>
+            <ul class="list-unstyled">
+                {{#each influenced}}
+                <li>{{this}}</li>
+                {{/each}}
+            </ul>
+            <p><strong>Quotes:</strong></p>
+            <ul class="list-unstyled">
+                {{#each quotes}}
+                <li>{{this}}</li>
+                {{/each}}
+            </ul>
+            <p><strong>Major Discoveries:</strong></p>
+            <ul class="list-unstyled">
+                {{#each major_discoveries}}
+                <li>{{title}} ({{year}}) - {{description}}</li>
+                {{/each}}
+            </ul>
+            <p><strong>Contributions:</strong></p>
+            <ul class="list-unstyled">
+                <li>{{contributions.title}} in {{contributions.field}}, {{contributions.year}} -
+                    {{contributions.description}}</li>
+            </ul>
+        </div>
 
 
 
-</div>
+    </div>

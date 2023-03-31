@@ -3,66 +3,71 @@
 в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
 --}}
 
-<div>
+<div class="container">
     {{#with main}}
     <main>
         <section>
-            {{> title data="Work historis" big=true}}
-            <div>
-                <ul>
-                    {{#each works}}
-
-                    <li>
-                        <div>{{position}}</div>
-                        <br>
-                        <div>{{duration.from}} -
-                            {{#if duration.to}}{{duration.to}}
-                            {{else}}(досі працюю тут)
+            {{> title data="Work histories" big=true}}
+            <div class="row">
+                <div class="col-md-12">
+                    <ul class="list-group">
+                        {{#each works}}
+                        <li class="list-group-item">
+                            <div class="d-flex justify-content-between">
+                                <h4 class="mb-1">{{position}}</h4>
+                                <small>
+                                    {{duration.from}} -
+                                    {{#if duration.to}}
+                                    {{duration.to}}
+                                    {{else}}
+                                    (досі працюю тут)
+                                    {{/if}}
+                                </small>
+                            </div>
+                            {{#if company.url}}
+                            <a href="{{company.url}}" class="text-decoration-none">
+                                <h5 class="mb-1">{{company.name}}</h5>
+                            </a>
+                            {{else}}
+                            <h5 class="mb-1">{{company.name}}</h5>
                             {{/if}}
-                        </div>
-
-                        <br>
-                        {{#if company.url}}
-                        <div>{{>link text=company.name href=company.url blank=true noLine=true }}</div>
-                        {{else}}
-                        <div><b>{{company.name}}</b></div>
-                        {{/if}}
-                        <br>
-                        <br>
-                        <div>
-                            <strong>Projects: {{projektAmount}}</strong>
-                        </div>
-                        <br>
-                        <ul>
-                            {{#each projekts}}
-                            <li>
-                                <div>{{>link text=name href=url blank=true noLine=true}}</div>
+                            <br>
+                            <div>
+                                <strong>Projects: {{projektAmount}}</strong>
+                            </div>
+                            <br>
+                            <ul>
+                                {{#each projekts}}
+                                <li>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <a href="{{url}}" class="text-decoration-none">
+                                            <h5 class="mb-1">{{name}}</h5>
+                                        </a>
+                                        <small>
+                                            Project stacks: ({{stacksAmaunt}})
+                                        </small>
+                                    </div>
+                                    <p>{{about}}</p>
+                                    <ul>
+                                        {{#each stacks}}
+                                        <li>{{name}}</li>
+                                        {{/each}}
+                                    </ul>
+                                    <br>
+                                    <div>Project awards:</div>
+                                    <ul>
+                                        {{#each avards}}
+                                        <li>{{name}}</li>
+                                        {{/each}}
+                                    </ul>
+                                </li>
                                 <br>
-                                <p>{{about}}</p>
-                                <br>
-                                <em> Project stacks: ({{stacksAmaunt}})</em>
-                                <br>
-                                <ul>
-                                    {{#each stacks}}
-                                    <li>{{name}}</li>
-                                    {{/each}}
-                                </ul>
-                                <br>
-                                <em> Project avards:</em>
-                                <br>
-                                <ul>
-                                    {{#each avards}}
-                                    <li>{{name}}</li>
-                                    {{/each}}
-                                </ul>
-                            </li>
-                            {{/each}}
-                        </ul>
-                    </li>
-
-                    <br>
-                    {{/each}}
-                </ul>
+                                {{/each}}
+                            </ul>
+                        </li>
+                        {{/each}}
+                    </ul>
+                </div>
             </div>
         </section>
     </main>

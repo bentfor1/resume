@@ -1,0 +1,60 @@
+{{!--
+Це код container файлу для summary сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+--}}
+<h2>List of project pages </h2>
+<div class="row mt-3">
+    {{#each main}}
+    <div class="col-md-3 mb-3">
+        <div class="card h-8  ms-2">
+
+            <div class="card-body">
+                <h5 class="card-title">{{this.title}}</h5>
+                <a href={{this.href}}>See more</a>
+                <p class="card-text">{{this.text}}</p>
+            </div>
+        </div>
+    </div>
+    {{/each}}
+    <div class="col-md-3 mb-3">
+        <div class="card h-8  ms-2">
+
+            <div class="card-body">
+                <h5 class="card-title">{{>myshope}}</h5>
+
+                <p class="card-text">I don't even know why I'm so happy. The student and future unattached June won a
+                    real computer hardware store in the lottery!</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 mb-3">
+        <div class="card h-8  ms-2">
+
+            <div class="card-body">
+                <h5 class="card-title">{{>trach}}</h5>
+
+                <p class="card-text">I don't even know why I need this collection of junk, but it's a shame to throw it
+                    away!
+                    So, let it lie, and suddenly I will make something useful out of these lumps? It is
+                    more convenient to make from ready-made blanks.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 mb-3">
+        <div class="card h-8  ms-2">
+
+            <div class="card-body">
+                <h5 class="card-title">{{>pist}}</h5>
+
+                <p class="card-text">This warehouse of ammunition generally arose as a misunderstanding. Our powerful
+                    mentor said to create an additional page in this project, but then said that it is better to make a
+                    separate project.
+                    This is how this incomprehensible monument of web architecture appeared...</p>
+            </div>
+        </div>
+    </div>
+</div>
+{{!--
+Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+Адже наш layout/default.hbs має вже структуру HTML
+--}}

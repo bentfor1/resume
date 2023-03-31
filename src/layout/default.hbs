@@ -6,6 +6,7 @@
 <html>
 
 <head>
+	{{>nav}}
 	<title>
 		{{page.title}}
 	</title>
@@ -35,13 +36,14 @@
 		<hr>
 	</header>
 	{{/with}}
-	{{>nav}}
+
 	{{! ↓ ця кострукція показує куди шаблонізатору треба вставляти код з container файлу --}}
 	{{{body}}}
 
 	{{>footer}}
 
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+	<link href='css/style-resume.css' rel='stylesheet' />
 
 </body>
 
