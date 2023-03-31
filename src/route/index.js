@@ -49,6 +49,7 @@ router.get('/', function (req, res) {
 router.get('/summary', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
   res.render('summary', {
+
     // ↙ сюди вводимо JSON дані
     page: {
       title: 'Resume | Summary',
@@ -65,7 +66,8 @@ router.get('/summary', function (req, res) {
         title: 'Other experience',
         text: `Pet project for parsing sport betting data from different platforms ( odds ) and sport statistics (
           tournament position, goals etc), analyzing by simple mathematics models and preparing probability
-          for such events like: money line - first win / draw / second win, totals etc.`
+          for such events like: money line - first win / draw / second win, totals etc.
+          And also, I don't even know why, I opened my own computer store.`
       },
     },
     footer,
@@ -74,12 +76,13 @@ router.get('/summary', function (req, res) {
 // ================================================================
 
 //              ↙ тут вводимо шлях (PATH) до сторінки
-router.get('/scills', function (req, res) {
+router.get('/skills', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
-  res.render('scills', {
+  res.render('skills', {
+
     // ↙ сюди вводимо JSON дані
     page: {
-      title: 'Resume | Scills',
+      title: 'Resume | Skills',
     },
     header,
     main: {
@@ -89,6 +92,7 @@ router.get('/scills', function (req, res) {
         { name: "VS Code", point: 80, isTop: false },
         { name: "GIT", point: 70, isTop: false },
         { name: 'NPM', point: 0 },
+        { name: 'JavaScript', point: 0, href: '/js' },
         { name: "PHP", point: null }
       ],
       hobbies: [
@@ -108,6 +112,7 @@ router.get('/scills', function (req, res) {
 router.get('/education', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
   res.render('education', {
+
     // ↙ сюди вводимо JSON дані
     page: {
       title: 'Resume | Education',
@@ -139,8 +144,8 @@ router.get('/education', function (req, res) {
 router.get('/work', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
   res.render('work', {
+
     // ↙ сюди вводимо JSON дані
-    layout: 'big',
     page: {
       title: 'Resume | Work',
     },
@@ -185,7 +190,7 @@ router.get('/work', function (req, res) {
 router.get('/person', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
   res.render('person', {
-    layout: 'basic',
+
     person: {
       name: 'Emma Johnson',
       age: 32,
@@ -1114,11 +1119,11 @@ router.get('/task22', function (req, res) {
 // router.get Створює нам один ентпоїнт
 
 //           ↙ тут вводимо шлях (PATH) до сторінки
-router.get('/task31', function (req, res) {
+router.get('/website', function (req, res) {
   // res.render генерує нам HTML сторінку
 
   //            ↙ cюди вводимо назву файлу з сontainer
-  res.render('task31', {
+  res.render('website', {
     layout: 'basic',
     navigation: {
       links: [
@@ -3697,6 +3702,149 @@ router.get('/shopcatalog', function (req, res) {
 })
 
 // ================================================================
+
+// ================================================================
+
+//              ↙ тут вводимо шлях (PATH) до сторінки
+router.get('/index8', function (req, res) {
+  //             ↙ cюди вводимо назву файлу з сontainer
+  res.render('index8', {
+    layout: 'index8',
+    // ↙ сюди вводимо JSON дані
+    page: {
+      title: 'Resume | index8',
+    },
+    header,
+    main: {
+      summary: {
+        title: 'Summary',
+        href: '/summary',
+        text: `"Listen up, you punks and freaks, summary's the word that always speaks. It's short and sweet,
+         no time to waste, gets to the point with a punk rock taste. So don't be shy, give it a try, summary's the rebel battle cry!"`,
+      },
+      skills: {
+        title: 'Skills',
+        href: '/skills',
+        text: `"Got the skills to pay the bills, punk attitude with thrills and spills. Grit and grind, never quit, skills are the key to make you legit. So sharpen your mind, and hone your craft,
+         skills are the foundation of punk rock's path."`
+      },
+      education: {
+        title: 'Education',
+        href: '/education',
+        text: `"Education's a weapon, punk's rebellion in session. Break the chains of conformity, get schooled in punk's diversity. From the streets to the stage, education's the key to punk's rage. 
+        So don't be a fool, punk's education is cool!"`
+      },
+      work: {
+        title: 'Work',
+        href: '/work',
+        text: `"No more bosses, no more rules, punk's work ethic is breaking the tools. DIY or die, it's the only way, punk's work ethic will never stray. So join the revolution, and join the fight,
+         punk's work ethic will make things right!"`
+      },
+      js: {
+        title: 'JavaScript',
+        href: '/js',
+        text: `"JavaScript smashes templates and breaks conventions, 
+        that's punk rock! Ignore the rules and create something cool on your own! JavaScript is our everything, our powerful mentor will not let us lie!"`
+      },
+      web: {
+        title: 'Web',
+        href: '/web',
+        text: `"Web development is a blank canvas, and it's up to you to make your mark.
+         With fierce creativity and cutting-edge tools, you can create something that will truly stand out and make a difference."`
+      },
+      car: {
+        title: 'Car',
+        href: '/car',
+        text: `"Cars are like the guitars of the road, revving up to create a symphony of speed and power. From muscle cars to roadsters, these machines are the embodiment of rebellion and freedom. 
+        "`
+      },
+      mac: {
+        title: 'Mac',
+        href: '/mac',
+        text: `The MacBook is the punk rock laptop of choice, sleek and stylish with an attitude that screams "DIY or die". From graphic design to music production, this machine is a creative powerhouse 
+         `
+      },
+      website: {
+        title: 'Website',
+        href: '/website',
+        text: `"A website is like a punk rock show, an opportunity to showcase your unique style and make a statement. Whether you're designing a blog or an e-commerce site, it's all about standing out and 
+        making your voice heard." `
+      },
+
+    },
+    footer,
+  })
+})
+// ================================================================
+
+// ================================================================
+
+//              ↙ тут вводимо шлях (PATH) до сторінки
+router.get('/bio', function (req, res) {
+  //             ↙ cюди вводимо назву файлу з сontainer
+  res.render('bio', {
+
+    // ↙ сюди вводимо JSON дані
+    page: {
+      title: 'Resume | bio',
+    },
+    header,
+    main: {
+      universities: [
+        { name: "Hogvard", isEnd: true },
+        { name: "PTU #13", isEnd: true },
+        { name: "Shchuchynska school", isEnd: true },
+        { name: "Mogilivska school", isEnd: true },
+        { name: "Cinic Academy", isEnd: false },
+        { name: "Police Academy", isEnd: false },
+      ],
+      certificates: [
+        { name: "About vaccination against rabies", id: 111222 },
+        { name: "In field conditions without diarrhea", id: 111322 },
+        { name: "The ability to smile happily while being a vile scumbag", id: 111422 },
+      ]
+    },
+    footer,
+  })
+
+})
+
+// ================================================================
+
+// ================================================================
+
+//              ↙ тут вводимо шлях (PATH) до сторінки
+router.get('/selector1', function (req, res) {
+  //             ↙ cюди вводимо назву файлу з сontainer
+  res.render('selector1', {
+    layout: 'basic',
+    // ↙ сюди вводимо JSON дані
+    page: {
+      title: 'CSS | selector1',
+    },
+    header,
+    main: {
+      universities: [
+        { name: "Hogvard", isEnd: true },
+        { name: "PTU #13", isEnd: true },
+        { name: "Shchuchynska school", isEnd: true },
+        { name: "Mogilivska school", isEnd: true },
+        { name: "Cinic Academy", isEnd: false },
+        { name: "Police Academy", isEnd: false },
+      ],
+      certificates: [
+        { name: "About vaccination against rabies", id: 111222 },
+        { name: "In field conditions without diarrhea", id: 111322 },
+        { name: "The ability to smile happily while being a vile scumbag", id: 111422 },
+      ]
+    },
+    footer,
+  })
+
+})
+
+// ================================================================
+
 
 // Підключаємо роутер до бек-енду
 module.exports = router

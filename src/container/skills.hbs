@@ -6,13 +6,16 @@
 <div>
 
     {{#with main}}
-    <main>
-        <section>
+    <main class="row">
+        <section class="col-6">
             {{!-- {{> title data="Skills"}} --}}
             {{>title data="Skills" big=true}}
             <ul>
                 {{#each scills}}
-                <li>{{name}}
+                <li>{{#if href}}
+                    <a class="btn btn-outline-secondary" href="{{href}}" role="button">{{name}}</a>
+                    {{/if}}
+                    {{#unless href}} {{name}} {{/unless}}
                     {{#if point includeZero=true}} ({{point}}) {{/if}}
                     {{#if isTop}} (TOP) {{/if}}
                     {{#unless point }} {{#if point includeZero=true}} (вивчаємо, але топчемся на нулю)
@@ -22,7 +25,7 @@
                 {{/each}}
             </ul>
         </section>
-        <section>
+        <section class="col-6">
             {{!-- {{> title data="My hobbies"}} --}}
             {{>title data="My hobbies" big=false}}
             <ul>

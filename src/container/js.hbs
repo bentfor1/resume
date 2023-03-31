@@ -1,80 +1,71 @@
-<div>
-    <p>
-
-        Js page
-    </p>
+<div class="container">
+    <p class="fs-4">Js page</p>
 </div>
-<div>
-
-    {{!-- <h1>{{name}}</h1> --}}
+<div class="container-fluid">
     <h1><span class="badge bg-primary">{{name}}</span></h1>
-    <p>{{description}}</p>
-    <hr>
+    <p class="lead">{{description}}</p>
+    <hr class="my-4">
     <br>
-    <h2>History</h2>
-    <ul>
+    <h2 class="fw-bold">History</h2>
+    <ul class="list-unstyled">
         <li>Year: {{history.year}}</li>
         <li>Founder: {{history.founder}}</li>
     </ul>
-    <hr>
+    <hr class="my-4">
     <br>
-    <h2>Types</h2>
-    <ul>
+    <h2 class="fw-bold">Types</h2>
+    <ul class="list-unstyled">
         {{#each types}}
         <li>{{this}}</li>
         {{/each}}
     </ul>
-    <hr>
+    <hr class="my-4">
     <br>
-    <h2>Values</h2>
-    <ul>
+    <h2 class="fw-bold">Values</h2>
+    <ul class="list-unstyled">
         {{#each values}}
         <li>{{this}}</li>
         {{/each}}
     </ul>
-    <hr>
+    <hr class="my-4">
     <br>
-    <h2>Syntax</h2>
-    <ul>
+    <h2 class="fw-bold">Syntax</h2>
+    <ul class="list-unstyled">
         <li>Variables: {{syntax.variables}}</li>
         <li>Functions: {{syntax.functions}}</li>
         <li>Conditionals: {{syntax.conditionals}}</li>
         <li>Loops: {{syntax.loops}}</li>
         <li>Classes: {{syntax.classes}}</li>
     </ul>
-    <hr>
+    <hr class="my-4">
     <br>
-    <h2>Features</h2>
-    <ul>
+    <h2 class="fw-bold">Features</h2>
+    <ul class="list-unstyled">
         {{#each features}}
-        <li><span class="badge text-bg-warning">{{this}}</span></li>
+        <li><span class="badge bg-warning">{{this}}</span></li>
         {{/each}}
     </ul>
-    <hr>
+    <hr class="my-4">
     <br>
-    <h2>Libraries</h2>
-    <ul>
+    <h2 class="fw-bold">Libraries</h2>
+    <ul class="list-unstyled">
         {{#each libraries}}
         <li>{{this}}</li>
         {{/each}}
     </ul>
-    <hr>
+    <hr class="my-4">
     <br>
-    <h2>Tools</h2>
-    <ul>
+    <h2 class="fw-bold">Tools</h2>
+    <ul class="list-unstyled">
         {{#each tools}}
-        <li>{{this}}</li>
-        {{/each}}
-    </ul>
-    <hr>
-    <br>
-    <h2>Community</h2>
-    <ul>
-        {{#each community}}
-        <li><span class="badge text-bg-primary">{{this.name}} ({{this.type}})</span></li>
-        {{!-- <li>{{this.name}} ({{this.type}})</li> --}}
-        {{/each}}
-    </ul>
-
-
+        <li>{{this}}</li {{/each}} </ul>
+        <hr>
+        <br>
+        <h2>Community</h2>
+        <ul>
+            {{#each community}}
+            <li><span class="badge text-bg-primary">{{this.name}} ({{this.type}})</span></li>
+            {{!-- <li>{{this.name}} ({{this.type}})</li> --}}
+            {{/each}}
+        </ul>
 </div>
